@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Analysis</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script type="text/javascript" src="js/d3.js"></script>
+</head>
+<body>
+<div id="intro" class="parts">
+    <h1>Analysis of Fairy Tales Across Cultures</h1>
+    <h4 class="author-info"> By Wilson(Wei) Wang, Email: wilson.wang@wustl.edu, School ID: 435204</h4>
+    <p>
+        In this graphical report, I aim to explore the difference and similarities between fairy tales of different
+        nationalities. For this topic, I choose three different fairy tale books containing English, Russian, and Indian
+        fairy tales. As a simple model of world fairy tales, the English one in my case would represent Western/US fairy
+        tales; the Russian one represents Eastern European tales; the Indian one represents Asian tales.
+    </p>
+    <h3>
+        Problems to solve:
+    </h3>
+    <p>
+        1. Analyze the frequencies of most common words by TF-IDF. This will give a direct image of cultural word usage
+        of
+        fairy tales of various origin.<br/>
+        2. Analyze linguistic dimensionality of regional fairy tales. The axis will be colored in a heat decadency order
+        reflecting levels of sentiment. The data will then be represented by Parallel Coordinates, which allows
+        comparison between sentiments in fairy tales from different backgrounds. I was inspired to create draggable axis
+        by blo.ck <br/>
+        3. Analyze the linguistic vectors of regional fairy tales. This serves as an extension to linguistic
+        dimensionality.
+        For example, some statistics alone do not reflect statistical meaningful results. However, the ratio between
+        stats
+        may provide interest and insight for data science. This part allows the users to better comprehend the
+        difference
+        and similarity between national fairy tales, given their vectors of composition.
+    </p>
+</div>
+
+
+<div id="TF-IDF" class="parts">
+    <div class="partsNoMargin">
+        <h2>
+            I. TF-IDF Analysis
+        </h2>
+        <p>
+            First analyze words of highest TF-IDF as they are considered "the most important words" in the
+            fairy tale word sets. I will use a babble graph to show the most common words in the graph. The size of the
+            babbles represent the relative importance of the words. The color heat of the words represent the word
+            length, as longer words are "hotter". On the right of each babble graph is the interpretation of the data.
+        </p>
+    </div>
+    <div id="EnglishBubbleGraph" class="bubbleGraph">
+
+        <div id="EnglishBubbleGraphExplanation" class="bubbleGraphExplanation">
+            <h3>
+                English TD-IDF Analysis
+            </h3>
+            <p>
+                Looking at the high TF-IDF words in the English fairy tales, we can see that most of the words are of
+                the length 3 or 4, which correspond to the color "light blue" and "grey". This is largely due to the
+                audiences of the English fairy tales are kids. Noticably we can see that the average word length (thus
+                average heat of the color of circles) here is relatively low compared to fairy tales from Russia or
+                India. This is probably due to that the other stories are usually translated and simople words in
+                foreign languages may or may be be easily expressed in English during translation.
+            </p>
+            <p>
+                One thing noticeable is that English fairy tales are obsessed with using the name "Jack", and they
+                usually prefer "cat" then "dog" in their stories.
+            </p>
+        </div>
+    </div>
+    <div id="RussianBubbleGraph" class="bubbleGraph">
+
+        <div id="RussianBubbleGraphExplanation" class="bubbleGraphExplanation">
+            <h3>
+                Russian TD-IDF Analysis
+            </h3>
+            <p>
+                Looking at the Russian TF-IDF words in the Russian fairy tales, we can clearly see some regional words
+                such as "tsarevich" which means the first prince of the kingdom. In this respect, it is similar to
+                English fairy tales since "prince" is a word of high frequency in those fairy tales.
+            </p>
+            <p>
+                In contrast to typical English fairy tales. Russian fairy tales don't have as many animals as English
+                fairy tales do. Instead, based on the words of high importance, the fairy tales are more related to
+                human beings, and are usually more so to the royal members. For examples, the word king, prince,
+                princess, and fool are very common. This could largely indicate the ancient word recorded fairy tales
+                themes in Russia are largely distributed among royal settings.
+            </p>
+        </div>
+    </div>
+    <div id="IndianBubbleGraph" class="bubbleGraph">
+
+        <div id="IndianBubbleGraphExplanation" class="bubbleGraphExplanation">
+            <h3>
+                Indian TD-IDF Analysis
+            </h3>
+            <p>
+                We do see some Indian only word such as "faja", or "fakir" which are names of Muslim religious. However,
+                the Indian fairy tales share the same theme as the English and Russian fairy tales. Its jokes are mostly
+                centered towards royal members such as kings and princes, and towards animals such as horses and dogs.
+                It may occur that all over the world, the fairy tales are likely to include animals and royal animals
+                due to those content's benign nature.
+            </p>
+            <p>
+                Different from English and Russian fairy tales, the word "son" has a high importance in the Indian fairy
+                tales. This may indicate the Asian background of the Indian fairy tales, where in ancient Asia, people
+                are largely concerned about family heritage and therefore the fairy tales mention about father and son
+                relationships.
+            </p>
+        </div>
+    </div>
+</div>
+<div id="Parallel Coordinate" class="parts">
+    <div class="partsNoMargin">
+        <h2>
+            II. Parallel Coordinate of Properties with Linear Characteristics
+        </h2>
+        <p>
+            The parallel coordinate graph gives the user a direct view of categorical linear data for all countries'
+            fairy tales. On one hand, the user can notice that there are many level under that property. For example,
+            for emotions, it could be happy => delighted => neutral => sad => mad in a line so that each axis will have
+            different heat of color and give the user a vivid information about its meaning. On the other hand, the user
+            will be able to track the lines for a certain country's fairy tale so that they will be able to see how
+            countries do relatively well in a certain category.
+        </p>
+        <h3>
+            Path Color: (You can drag the pixels horizontally if you like!!!)
+        </h3>
+        <p>
+            English Fairy Tales: Blue Line<Br/><Br/>
+            Russian Fairy Tales: Red Line<Br/><Br/>
+            Indian Fairy Tales: Green Line
+        </p>
+    </div>
+
+    <div id="drivesParallelCoordinate" class="parallelCoordinate">
+        <h3>
+            Drives Parallel Coordinates
+        </h3>
+        <div id="drivesParallelCoordinateExplanation" class="parallelCoordinateExplanation">
+            <p>
+                Look at the graph for drives for the fairy tales. We can easily discover that Indian Fairy tales largely
+                focus on drives, affiliation, achieve, power, and risk. This absolutely does not mean that Indian fairy
+                tales focus on those things, but this does affect that Indian fairy tales use more words to reflect the
+                individual motivations.
+            </p>
+            <p>
+                Noticeably, the Indian fairy tales does not focus on the reward. Therefore, Indian fairy tales focus
+                more on the process and achievement but not on the actual reward. We do notice that English fairy tales
+                and Russian fairy tales have a similar pattern of drives. Ths probably mean that cultural wise the
+                Russian fairy tales are more close to the English fairy tales than Indian fairy tales.
+            </p>
+        </div>
+    </div>
+
+    <div id="concernsParallelCoordinate" class="parallelCoordinate">
+        <h3>
+            Concerns Parallel Coordinates
+        </h3>
+        <div id="concernsParallelCoordinateExplanation" class="parallelCoordinateExplanation">
+            <p>
+                Look at this graph for concerns, we can see that Indian fairy tales focus considerably on religion and
+                death, which indicate that Indian fairy tales have involved more scenes regarding super natural back
+                ground and deity.
+            </p>
+            <p>
+                We can also discover that comparing to English fairy tales, Russian and Indian fairy tales are less home
+                oriented. This as we also discovered in word list of high TF-IDF, indicates that Russian and Indian
+                fairy tales probably have very different audiences. Instead of for the normal households, it implements
+                the value of more educated and royal families.
+            </p>
+            <p>
+                The Russian fairy tales focus more on leisure and work. This means that the background settings for
+                Russian fairy tales are more towards the setting of leisure.
+            </p>
+        </div>
+    </div>
+
+
+</div>
+
+<div id="connectedScatterPlot" class="parts">
+    <div class="partsNoMargin">
+        <h2>
+            III. Connected Scatter Plot for vector properties
+        </h2>
+        <p>
+            The connected scatter plots focus in the relationship between attributes (not entities). For example, if
+            the document mentions boys and girls, the number of boys the story mentions may not give a meaningful
+            explanation of the data set. However, if we use the number of boys as x axis and number of girls as y axis,
+            then these two data together gives the user the idea of gender ratio in the data set. Moreover, connecting
+            those dots from different scatter plots helps the user to track the ratio status of the same countries’
+            fairy tale. The user just needs to follow the specific color of lines, to see all these ratios.
+        </p>
+        <h3>
+            Path Color:
+        </h3>
+        <p>
+            English Fairy Tales: Blue Line<Br/><Br/>
+            Russian Fairy Tales: Red Line<Br/><Br/>
+            Indian Fairy Tales: Green Line
+        </p>
+    </div>
+
+    <div id="firstConnectedScatterPlot" class="connectedScatterPlot">
+        <h3>
+            Concerns Parallel Coordinates
+        </h3>
+        <div id="firstConnectedScatterPlotExplanation" class="connectedScatterPlotExplanation">
+        </div>
+    </div>
+    <div class="partsNoMargin">
+        <p>
+            Looking at the graph above, we are able to compare separately about property vectors of the fairy tales.
+            From the data, we can see that Indian fairy tales generally have more male characters than English fairy
+            tales and Russian fairy tales. This is largely due to that Indian cultures are more gender biased, so that
+            their fairy tales have more characters like "princes" and "kings", instead of "little girl" or "wife".
+        </p>
+        <p>
+            Moreover, we can see that English and Russian fairy tales are similar in regard to the way they depict their
+            stories. However, Indian fairy tales, again, have more visual descriptions about objects than sensual. This
+            might be that Indian fairy tales like to include scenes of environments instead of depicting feelings of
+            characters. A larger data set of fairy tales is needed to make this conclusion.
+        </p>
+        <p>
+            We also see similarities for those sets in our data. All those fairy tales are almost equally likely to
+            write about the past as well as the future. This suggests that fairy tales across the world has an equal
+            sense of chronic line. The reason for this is probably that those stories are fairy tales and are of equal
+            amount of imagination regarding future and past. The future-to-past ratio is more determined by literature
+            genres than by culture.
+        </p>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="js/heatBabbleGraph.js"></script>
+<script type="text/javascript" src="js/parallelCoordinate.js"></script>
+<script type="text/javascript" src="js/connectedScatterPlot.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
