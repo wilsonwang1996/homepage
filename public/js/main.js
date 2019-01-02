@@ -1,0 +1,2 @@
+//Initiate navigator
+new Navigation();
