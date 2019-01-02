@@ -1,0 +1,300 @@
+.color-primary-0 {
+    color: #3E50AC
+}
+
+/* Main Primary color */
+.color-primary-1 {
+    color: #8794D8
+}
+
+.color-primary-2 {
+    color: #5C6CC0
+}
+
+.color-primary-3 {
+    color: #2135A3
+}
+
+.color-primary-4 {
+    color: #15257C
+}
+
+.color-secondary-1-0 {
+    color: #613BAC
+}
+
+/* Main Secondary color (1) */
+.color-secondary-1-1 {
+    color: #A185D8
+}
+
+.color-secondary-1-2 {
+    color: #7C59C0
+}
+
+.color-secondary-1-3 {
+    color: #4A1DA3
+}
+
+.color-secondary-1-4 {
+    color: #36117C
+}
+
+.color-secondary-2-0 {
+    color: #2F7F9E
+}
+
+/* Main Secondary color (2) */
+.color-secondary-2-1 {
+    color: #7BB9D1;
+    fill: #7BB9D1;
+}
+
+.color-secondary-2-2 {
+    color: #4E98B5;
+    fill: #4E98B5
+}
+
+.color-secondary-2-3 {
+    color: #137196;
+    fill: #137196;
+
+}
+
+.color-secondary-2-4 {
+    color: #0A5572
+}
+
+html {
+    height: 100%;
+}
+
+header {
+    /*position: relative;*/
+    height: 144px;
+    background-color: white;
+}
+
+#author, #title {
+    color: white;
+}
+
+#title-area {
+    width: 100%;
+    height: 80px;
+    margin: 1px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #3E50AC;
+    position: relative;
+    radius: 3px;
+}
+
+#title {
+    position: absolute;
+    font-family: "Dosis", sans-serif;
+    font-size: 64px;
+    color: #8794D8;
+    color: white;
+    bottom: 0;
+    left: 10px;
+}
+
+#title-emoji {
+    position: absolute;
+    bottom: 5px;
+    left: 370px;
+    color: #8794D8;
+}
+
+#author {
+    position: absolute;
+    right: 10px;
+    bottom: 0;
+    float: right;
+    padding-right: 5px;
+}
+
+/* Kaitlyn's div stuff  */
+
+#words-by-age-side {
+    margin-left: 20px;
+}
+
+#age-breakdown {
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    width: 50%;
+    /* height: 100px; */
+}
+
+#x-checkboxes, #y-checkboxes {
+    display: flex;
+    flex-flow: column;
+}
+
+#x-checkboxes input, #y-checkboxes input {
+    margin-top: 7px;
+}
+
+#age-breakdown-dimension-selection {
+    display: flex;
+    flex-flow: row;
+}
+
+.btn-viz-nav {
+    background-color: #A185D8;
+    color: #4A1DA3;
+    margin-right: 5px;
+    margin-top: 8px;
+}
+
+.btn-viz-nav.active, .btn-viz-nav:hover {
+    background-color: #4A1DA3;
+    color: #A185D8;
+}
+
+body {
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#chart-area {
+    position: relative;
+    min-height: calc(100% - 144px);
+    background-color: white;
+}
+
+.selection {
+    fill: #7BB9D1;
+    stroke: #7BB9D1;
+    fill-opacity: .3;
+    stroke-width: 2px;
+    stroke-opacity: .5;
+    rx: 3px;
+    ry: 3px;
+    /* stroke-dasharray: 10,5,3,3,3,5; */
+}
+
+.brush .extent {
+    zoom: 135%
+}
+
+.scatterplot-line {
+    fill: none;
+    stroke: #2F7F9E;
+    stroke-width: 3px;
+}
+
+.rounded-edges {
+    stroke-linecap: round;
+    stroke-width: 3px;
+}
+
+.tt-box {
+    rx: 3px;
+    ry: 3px;
+    stroke: #3E50AC;
+    stroke-width: 2px;
+    fill: white;
+}
+
+.tt-text {
+    fill: #2F7F9E
+
+}
+
+.dosis {
+    font-family: 'Dosis', sans-serif;
+}
+
+.purple-text {
+    fill: #3E50AC;
+    color: #3E50AC;
+}
+
+.teal-text {
+    fill: #137196;
+    color: #137196;
+}
+
+.chart {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+}
+
+#pane-clear-button {
+    opacity: 0.5;
+    text-align: center;
+}
+
+#pane-clear-button:hover {
+    fill: darkgray;
+    cursor: pointer;
+    opacity: 0.5;
+    text-align: center;
+}
+
+.btn-search {
+    background-color: #8794D8;
+    color: #2135A3;
+    margin-right: 5px;
+    margin-top: 8px;
+}
+
+.btn-search:hover {
+    background-color: #2135A3;
+    color: #8794D8;
+}
+
+#chart-growth-inner {
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 94%;
+    height: 480px;
+    position: relative;
+    display: flex;
+    flex-flow: row;
+    /* Ahahaha ik really crappy workaround shh */
+    /* zoom: 135%; */
+}
+
+#age-breakdown {
+    display: flex;
+    flex-flow: row;
+    /* zoom: 135%; */
+}
+
+#attribute-main-div {
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    flex-flow: column;
+}
+
+#age-breakdown-age-selection {
+    margin-top: 10px;
+    margin-left: 10px;
+    /* zoom: 110%; */
+}
+
+#process-book {
+    position: absolute;
+    right: 16px;
+    top: 0;
+}
+
+#process-book:hover {
+    color: lightgrey;
+}
+
+/*.div-search-area{*/
+/*position: absolute;*/
+/*top: 335px;*/
+
+/*}*/

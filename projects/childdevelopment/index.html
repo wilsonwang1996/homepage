@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Child Development</title>
+    <link rel="shortcut icon" href="public/data/pictures/boyEmoji.jpg"/>
+    <!--Import user defined style sheet-->
+    <link rel="stylesheet" href="public/css/style.css"/>
+    <!--Import Handsontable library, copyright to handsontable.com-->
+    <link rel="stylesheet" href="public/library/handsontable.full.css"/>
+    <script type="text/javascript" src="public/library/handsontable.full.js"></script>
+    <!--Import d3 for visualization-->
+    <script type="text/javascript" src="public/library/d3.js"></script>
+    <!--Import Bootstrap for tabs-->
+    <script type="text/javascript" src="public/library/jquery-3.3.1.slim.min.js"></script>
+    <script type="text/javascript" src="public/library/popper.min.js"></script>
+    <link rel="stylesheet" href="public/library/bootstrap.css"/>
+    <script type="text/javascript" src="public/library/bootstrap.bundle.js"></script>
+    <!--Import Google Emojis-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500" rel="stylesheet">
+
+</head>
+<body>
+<header class="navbar">
+    <div id="title-area">
+        <h1 id="title">Vocabulary Development for Ages 2-14</h1>
+        <!-- <i id="title-emoji" class="material-icons" style="font-size:50px">tag_faces</i> -->
+        <h5 id="author" class="dosis">
+            Wilson Wang<br/>
+            Kaitlyn Holzer
+        </h5>
+        <h5 target="_blank">
+            <a id="process-book" href="processBook">Process Book (With user help support)</a>
+        </h5>
+    </div>
+    <div class="btn-group btn-group-toggle btn-block btn-group-viz-nav" data-toggle="buttons">
+        <label class="btn btn-viz-nav  btn-block active"
+               onclick="showChart('chart-growth')">
+            <input type="radio" checked> Growth
+        </label>
+        <label class="btn btn-viz-nav  btn-block"
+               onclick="showChart('chart-attribute')">
+            <input type="radio"> Attributes
+        </label>
+        <label class="btn btn-viz-nav  btn-block"
+               onclick="showChart('chart-search')">
+            <input type="radio"> Search
+        </label>
+        <label class="btn btn-viz-nav  btn-block"
+               onclick="showChart('chart-download')">
+            <input type="radio"> Download
+        </label>
+    </div>
+</header>
+<div id="chart-area">
+    <div class="chart" id="chart-growth">
+    </div>
+    <div class="chart" id="chart-attribute">
+    </div>
+    <div class="chart" id="chart-search">
+    </div>
+    <div class="chart" id="chart-download">
+    </div>
+</div>
+</body>
+<script type="application/javascript" src="public/js/search.js"></script>
+<script type="application/javascript" src="public/js/spreadsheet.js"></script>
+<script type="application/javascript" src="public/js/download.js"></script>
+<script type="application/javascript" src="public/js/growth.js"></script>
+<script type="application/javascript" src="public/js/growth-side.js"></script>
+<script type="application/javascript" src="public/js/attributes.js"></script>
+<script type="application/javascript" src="public/js/main.js"></script>
+<script type="application/javascript" src="public/js/navigationHandler.js"></script>
+</html>

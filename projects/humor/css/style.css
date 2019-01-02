@@ -1,0 +1,51 @@
+#author {
+    text-align: right;
+}
+
+body {
+    position: relative;
+    background-color: lightyellow;
+    margin: 20px;
+}
+
+div.parallel-coordinate {
+    position: relative;
+    width: 68%;
+    float: left;
+}
+
+div.spreadsheet {
+    border: double #757575;
+    position: relative;
+    width: 28%;
+    float: left;
+}
+
+div.graph-component {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+}
+
+div.heat-babble-graph {
+    position: relative;
+    width: 50%;
+}
+
+p {
+    text-align: justify;
+    width: 60%;
+    margin-left: 20%;
+    font-size: 20pt;
+}
+
+a {
+    text-align: justify;
+    width: 60%;
+    margin-left: 20%;
+    font-size: 20pt;
+}
+
+#title {
+    text-align: center;
+}

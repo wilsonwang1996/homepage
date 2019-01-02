@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Process Book</title>
+    <link rel="shortcut icon" href="#"/>
+    <link rel="stylesheet" href="public/css/style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500" rel="stylesheet">
+
+</head>
+<body>
+<h1 id="title">Process Book</h1>
+<h2 class="title-parts">Cool Links</h2>
+Our project:
+<a href="../">here</a><br />
+Video guide how to use our viz:
+<a href="../screencast.mp4">here</a>
+<h2 class="title-parts">Overview and Motivation</h2>
+<h3>Overview:</h3>
+<p>This project aims to visualize the process where children pick up new vocabularies. Furthermore, it aims to give
+    users a rough sketch of properties of those words, and allow users to relate the data to their own interest and have
+    their own discovery about kids's vocabularies. Finally, not only will users take away interesting ideas from this
+    visualization, but they can also download their exploration in a csv, and use it for future research.</p>
+<h3>Motivation:</h3>
+<ul>
+    <li>Kaitlyn: I have a linguistics minor and overall love language, so doing something within the scope of
+        linguistics was an automatic choice for me. I’m especially interested in language development, and think that
+        being able to see the pace of reading development at a young age will be fun and informative.
+    </li>
+    <li>Wilson: I am doing quantitative finance where language process of news and articles could potentially create
+        signals for asset pricing and impact trade decisions. In this project, I aim to collaborate with my teammate and
+        work on analyzing and presenting data about linguistic factor time series. I will take advantage of this
+        experience as using quantitative methods to explain about data sets, and effectively and artistically represent
+        statistical results.
+    </li>
+</ul>
+<h2 class="title-parts">Related Work</h2>
+<p>
+    Content-wise, we were inspired by the initial text analysis in class and the discussions on how. It made us more
+    curious about the presentation of words to children and how their vocabulary stacked up against the real world in
+    terms of how positive it was, how concrete it was, etc.
+    Beyond that, knowing the importance of children developing a strong vocabulary piqued our interest because it's a
+    life-changing issue, and there is plenty of media stressing its importance, like <a
+        href="https://i.pinimg.com/originals/87/69/5b/87695bd20265d5531ea3a0a28c5d9b1f.jpg">this one</a>, along with
+    plenty of research and analysis (like the one we read <a
+        href="https://journals.sagepub.com/doi/pdf/10.1177/1525740117702457">here</a>).
+    The parallel coordinate libraries online are helpful since it provided insight in how to handle drag events in svg
+    canvas. We also used handsomeform which is a non-commercial library allowing us to have spreadsheets presented on
+    web pages. The general blog sites are helpful that we learned how to make our data downloadable based on user
+    selection.
+    Overall, the field of studying vocab development is young but burgeoning, and we were excited to explore it more and
+    learn.
+</p>
+<h2 class="title-parts">Questions</h2>
+<h3>Fundamental Questions As We Designed This Project</h3>
+<ul>
+    <li>
+        How fast are average kids learning words over time? How many words do they learn at each age?
+    </li>
+    <li>
+        Of words learned at different ages, do they have different attributes? For example, as kids grow up, do they
+        learn words that are more dominant?
+    </li>
+</ul>
+<h3>Questions We Added in Milestone #1</h3>
+<ul>
+    <li>
+        There are textbooks designed for kids from different age groups. How do words in those textbooks differ from
+        each other?<br/>
+        <b>We took out this question from our visualization in Milestone #2, for the reason below:</b><br/>
+        It is really hard to define "how old" is a book. Typically adults wrote those book and they don't really reflect
+        useful information about how kids learning words over time.
+    </li>
+    <li>
+        Are different attributes correlated with each other? Does the correlation between attributes change over time?
+    </li>
+</ul>
+<h3>Questions We Added in Milestone #2</h3>
+<ul>
+    <li>
+        Can we find words by their prefix and suffix?
+    </li>
+    <li>
+        How does attributes of words relate to age of learning?
+    </li>
+</ul>
+<h2 class="title-parts">Data</h2>
+<h3>Source</h3>
+<p>
+    Sources are mostly from The Center for Reading Research in Belgium (who have international studies that are relevant
+    universally to language learning). They’ve more or less done all the research and data acquisition and have plenty
+    in spreadsheets.
+</p>
+<ul>
+    <li>Test-based AoA norms for word meanings: <br/>
+        <a href="http://crr.ugent.be/archives/2100">http://crr.ugent.be/archives/2100</a> <br/>
+        <a href="http://crr.ugent.be/archives/806">http://crr.ugent.be/archives/806</a>
+    </li>
+    <li>
+        Word Prevalence:<br/>
+        <a href="http://crr.ugent.be/archives/2045">http://crr.ugent.be/archives/2045</a>
+    </li>
+    <li>
+        Words known (adults):<br/>
+        <a href="http://crr.ugent.be/archives/1915">http://crr.ugent.be/archives/1915</a>
+    </li>
+    <li>
+        Concreteness and affective vals:<br/>
+        <a href="http://crr.ugent.be/archives/1330">http://crr.ugent.be/archives/1330</a><br/>
+        <a href="http://crr.ugent.be/archives/1003">http://crr.ugent.be/archives/1003</a>
+    </li>
+</ul>
+<h3>Scraping Method</h3>
+<p>
+    None necessary!
+</p>
+<h3>Data Clean Up</h3>
+<p>
+    We merged our datasets and made a new csv with all the attributes for each word,
+    eliminating words that didn't have complete data. For the later charts,
+    we used a sampled subset of all words to reduce latency issues.
+</p>
+<h2 class="title-parts">Exploratory Data Analysis</h2>
+<p> Other Designs:
+<ul>
+    <li><a href=”https://slideplayer.com/slide/10144039/33/images/15/Language+Acquisition.jpg”>This</a> is one of the
+        designs we mimicked, and while it is simple, we felt it effective because it shows the drastic rate of growth
+        experienced in children’s vocabulary at the youngest of ages. Our scatterplot is in a way an extension of this
+        one, as it prompted our interest in the continued rate of growth for vocab and informed our design by
+        essentially letting us provide the extension of it.
+    </li>
+    <li>
+        <a href=”https://static.cambridge.org/resource/id/urn:cambridge.org:id:binary:20180802073320719-0288:S0305000918000089:S0305000918000089_fig3t.jpeg?pub-status=live”>Here</a>
+        was another type of visualization we looked at, which more directly represented specific words. We thought about
+        visualizing to that specificity, on a word level, but we realized that had far too many data points for them to
+        be individually meaningful (along with the fact that we have integer ages rather than float averages). That’s
+        part of why we decided to use the parallel coordinates spreadsheet generation as a way to show the data on a
+        word level: we didn’t think a full graph beyond the words by age plot would add anything or be effective use of
+        our visualization space as it would simply be too crowded, but we didn’t want to overlook the fact that users
+        might want to see the actual words or use them as a word list.
+    </li>
+</ul>
+
+</p>
+<h2 class="title-parts">Design Evolution</h2>
+<h3 class="title-parts">Design Evolution - Sketches</h3>
+<p>At the very first, we started off by drawing random charts on paper, the purpose of this is to have a pool of designs
+    to pick from. Some designs look like this: (Very rough and ugly and motivate innovation: </p>
+
+<a href="photos/sketchPool1.PNG" target="_blank">
+    <img src="photos/sketchPool1.PNG" height="200" width="160" alt="pic">
+</a>
+<a href="photos/sketchPool2.PNG" target="_blank">
+    <img src="photos/sketchPool2.PNG" height="200" width="160" alt="pic">
+</a>
+<a href="photos/sketchPool3.PNG" target="_blank">
+    <img src="photos/sketchPool3.PNG" height="200" width="160" alt="pic">
+</a>
+<p>
+    Based on those random thoughts, we generated a few valid page layouts.
+</p>
+<a href="photos/sketchDesign1.PNG" target="_blank">
+    <img src="photos/sketchDesign1.PNG" height="200" width="160" alt="pic">
+</a>
+<a href="photos/sketchDesign2.PNG" target="_blank">
+    <img src="photos/sketchDesign2.PNG" height="200" width="160" alt="pic">
+</a>
+<a href="photos/sketchDesign3.PNG" target="_blank">
+    <img src="photos/sketchDesign3.PNG" height="200" width="160" alt="pic">
+</a>
+<h3 class="title-parts">Design Evolution - Milestone #1</h3>
+<p>During the stage of Milestone #1, we updated our sketch to add more details, and we recognized the functionalities of
+    each
+    parts. This process is crucial, so based on those plans we started to get our hands on a very rough
+    visualization.</p>
+<p>We divided our visualization into four parts, and we named them: "Words By Age Chart", "Word Child Chart", "Property
+    Dictionary", and "Word AoA Overview". Note that we updated those names in our later designs, since those names are
+    confusing, and users didn't know what to do with each part or understand their relations. Sketches for each part of
+    our design:</p>
+</a>
+<a href="photos/partSketch1.PNG" target="_blank">
+    <img src="photos/partSketch1.PNG" height="200" width="160" alt="pic">
+</a>
+<a href="photos/partSketch2.PNG" target="_blank">
+    <img src="photos/partSketch2.PNG" height="200" width="160" alt="pic">
+</a>
+<a href="photos/partSketch3.PNG" target="_blank">
+    <img src="photos/partSketch3.PNG" height="200" width="160" alt="pic">
+</a>
+<a href="photos/partSketch4.PNG" target="_blank">
+    <img src="photos/partSketch4.PNG" height="200" width="160" alt="pic">
+</a>
+<ul>
+    <li>
+        In the first chart, we designed a fan with clickable buttons. The purpose of this chart is to allow users to
+        click on that fan and based on the clicks, it will show data in the center of the fan. It was designed to let
+        user find a word by initial letters, and then see the property of that word selected.
+    </li>
+    <li>
+        In the second chart, we have two layouts. The first one shows the number of words kids learn over time. The
+        second
+        chart keeps track of the growth rate. Then there is a column, which contains statistical data of selected words.
+    </li>
+    <li>
+        In the third chart, we are able to show customized plots. On the pane on the left, users can select properties
+        of their interests. And the system would generate either a bar graph if user wants one dimension, or a
+        scatter plot if users select two dimensions. This chart shows the attributes of words over time, and how
+        attributes might correlate to each other.
+    </li>
+    <li>
+        In the fourth chart, we use a parallel coordinate plot to let user brush on multiple properties. Based on their
+        selection, they will be able to download words of their choice. They can also examine the color of graph and see
+        how words of different age may have certain properties.
+    </li>
+</ul>
+<p>Notice that, at Milestone #1, we decided to have our future design functional based on this
+    framework. It didn't not deviate from our initial sketch. We just picked our best designs and put them into
+    plan and work.</p>
+<p>Following our plans we made during initial design. We finished the draft for two of four parts, which are the first
+    and third parts of the graphics. They were functional, and look like this:</p>
+<a href="photos/milestone1design1.PNG" target="_blank">
+    <img src="photos/milestone1design1.PNG" height="200" width="320" alt="pic">
+</a>
+<a href="photos/milestone1design2.PNG" target="_blank">
+    <img src="photos/milestone1design2.PNG" height="200" width="320" alt="pic">
+</a>
+<a href="photos/milestone1design3.PNG" target="_blank">
+    <img src="photos/milestone1design3.PNG" height="200" width="320" alt="pic">
+</a>
+<a href="photos/milestone1design4.PNG" target="_blank">
+    <img src="photos/milestone1design4.PNG" height="200" width="320" alt="pic">
+</a>
+<p>The graphics above set up examples about how we can: </p>
+<ul>
+    <li>Do brush selections in chart 1 on the word count, and highlight the corresponding growth rates.</li>
+    <li>Do brush selections in chart 3 on parallel coordinates, and show a spreadsheet of selected data.</li>
+</ul>
+<p>We found some potential problems during our talk with other groups about Milestone #1, which are:</p>
+<ul>
+    <li>Overall, chart 1 seems too simple, but given that the data is simple as well, we decided to add tooltips and
+        make the graphics look better in our final.
+    </li>
+    <li>
+        The parallel coordinate looks the same as the project we did in class (tho we did in another language), but this
+        doesn't mean this design is innovative enough. So we decide to add things and convey more data in this chart by
+        adding colors to words of different ages.
+    </li>
+</ul>
+
+
+<h3 class="title-parts">Design Evolution - Milestone #2</h3>
+<p>For Milestone #2, we set up the full framework for the project. The goal for this stage is to have the graphics
+    functional
+    (but not necessarily artistic) in order to best get feedback on the core of the visualizations. Based on
+    this design we generated ideas for the final visualization. Below, I will explain about each part of our design,
+    and how it evolute from our initial designs.</p>
+<ul>
+    <li><br/>
+        <a href="photos/milestone2NaviBar.PNG" target="_blank">
+            <img src="photos/milestone2NaviBar.PNG" alt="pic">
+        </a>
+        <p>We added this navigation bar because originally we had our charts all on one page, and since there are
+            too much content, they barely fit into that page. Also, since we wanted to work independently on our
+            respective designs,
+            we wanted to better facilitate conflict-free development. </p>
+        <p>A potential problem is that when this navigation bar loads initially, there is a lag and shapes showing up on
+            the page. So this needs to be optimized.</p>
+    </li>
+    <li><br/>
+        <a href="photos/milestone2Scatter.PNG" target="_blank">
+            <img src="photos/milestone2Scatter.PNG" alt="pic" width="800" height="400">
+        </a>
+        <p>
+            Our scatter plot functions pretty well. On the top there is a bar allows us to select timeline of our
+            desire. On the left is the selection pane and on the bottom is the scatter plot.
+        </p>
+        <p>The problem with this design is that right now it looks monotone and simplistic. To add more variations, more
+            tool tips can
+            be added, and we can also update the page layout to make it look better.</p>
+    </li>
+    <li><br/>
+        <a href="photos/milestone2ParallelCoordinate.PNG" target="_blank">
+            <img src="photos/milestone2ParallelCoordinate.PNG" alt="pic" width="800" height="400">
+        </a>
+        <p>In this chart, we improvide the old design by adding colors to each line, representing the age of acquisition
+            of that word. We also added a clear button, so that all brushes can easily be erased. We also optimized the
+            code by slicing the data, so the page loads faster.</p>
+        <p>
+            The problem with this design is that it might be too complex for people to understand and the lines look
+            kinda messy. To solve this problem, we need to do a clean up and hopefully find a better design than
+            parallel coordinate for our charts layouts.
+        </p>
+    </li>
+    <li><br/>
+        <a href="photos/milestone2GrowthChart.PNG" target="_blank">
+            <img src="photos/milestone2GrowthChart.PNG" alt="pic" width="800" height="400">
+        </a>
+        <p>This chart is pretty much identical to Milestone #1 since the focus was on developing functionality for our
+            second half of visualizations.
+            Nevertheless, a great improvement is that this chart now has tooltips and it helps guide the users towards
+            understanding our data.
+        </p>
+        <p>
+            We need to make the graphics look better. Again, this can be pushed over to after the dry run, in which we
+            can get advice from peers.
+        </p>
+    </li>
+    <li><br/>
+        <a href="photos/milestone2FanChart.PNG" target="_blank">
+            <img src="photos/milestone2FanChart.PNG" alt="pic" width="400" height="400">
+        </a>
+        <a href="photos/milestone2FanChart2.PNG" target="_blank">
+            <img src="photos/milestone2FanChart2.PNG" alt="pic" width="400" height="400">
+        </a>
+        <p>
+            In this fan chart, users first click on the first letter, then the second, to find the collection of words,
+            complete with a spinning animation.
+            On the top, there is a line keeping track of which level the user is at.
+        </p>
+        <p>
+            There are many things I can do to improve this chart. First, I should make it clear that clicking on middle
+            of the fan would return to last level. I'm planning to add a button here. Second, this fan looks ugly when
+            too many words fit into too little space. I'll take the words out of the fan and put them elsewhere so the
+            users can easily see it. Third, right now this chart does not connect with other charts very closely. I'm
+            adding a tooltip to it so that it allows users to get meaningful results when doing a search. Fourth, some
+            users may not like to use the pane to search, so I would add a separate search bar for this function.
+        </p>
+    </li>
+</ul>
+<h3 class="title-parts">Design Evolution - User Testing</h3>
+<p>We took all of our user testing into consideration, and many of our adjustments are clear responses to our user
+    testing feedback and observations. Therefore, we felt it valuable to include our notes:</p>
+<p>
+    A:
+<ul>
+    <li>Need larger dots on main scatterplot so it’s easier to hover
+    <li>Add hover to deriv chart
+    <li>One user didn’t realize you could brush, one did immediately (we were assuming the standard brush cursor would
+        make that obvious)
+    <li>No issues in interpretation for any elements, related tasks were completed effortlessly
+</ul>
+B:
+<ul>
+    <li> Need clearer definitions/more visible hovering
+    <li>Brush is a little sloppy, should start with everything highlighted and adjustable bars
+    <li>No immediate feedback on brush above since scatterplots don’t generate until axes are chosen, should probably at
+        least prompt the users
+    <li>One user wasn’t sure what X and Y meant until he generated a plot
+    <li>Scatterplot trends weren’t necessarily easy to pick up from just eyeing it, maybe providing a best fit line
+        would help?
+    <li>Stretch goal thought, if multiple years are selected, provide an animate option that goes through each year on
+        the scatterplot?
+    <li>Percentage known seems useless (since prevalence is related anyways and provides a more spaced out measure), we
+        should probably get rid of it
+</ul>
+C:
+<ul>
+    <li>Some struggling with brushing/being able to see the option to do so
+    <li>Sought a way to see a specific line on the chart from the spreadsheet
+    <li>Wanted a way to find a specific word - search-like functionality
+    <li>Trying to click off of brushed area to remove a specific axis brush
+    <li>Clearing the brush takes a while, users thought it might be broken
+</ul>
+D:
+<ul>
+    <li>Users weren’t sure how to move backwards a step
+    <li>Need some kind of feedback about where we are
+    <li>Weren’t sure of the point
+</ul>
+
+Overall:
+No one noted general latency as a problem, though there is some
+
+</p>
+<h3 class="title-parts">Design Evolution - Milestone#3</h3>
+(See in Implementation for our current design, its functionality, and improvements from older versions)
+<h2 class="title-parts">Implementation</h2>
+<h3>Favicon</h3>
+<a href="photos/finalFavicon.png" target="_blank">
+    <img src="photos/finalFavicon.png" alt="pic">
+</a>
+<p>We added a kid's favicon to add more spice to our page. Now it looks more like a legitimate web page.</p>
+<h3>Color Theme and Page Layout</h3>
+<a href="photos/finalPageLayout.png" target="_blank">
+    <img src="photos/finalPageLayout.png" alt="pic" width="800" height="100">
+</a>
+<p>
+    We updated page layout so that we follow a strict color theme and all elements on the page thus look more
+    harmonious.
+    We use three colors which are purple, blue, and green of different lightness. A great improvement from the old
+    navigation bar since now the buttons looks clickable, and we also have shorter and clearer names for parts of our
+    graph which indicates their functionality.
+</p>
+
+<h3>Growth Chart
+</h3>
+<a href="photos/finalGrowthChart.PNG" target="_blank">
+    <img src="photos/finalGrowthChart.PNG" alt="pic" height="400">
+</a>
+<p>
+    Since one of our biggest problems was the oversimplicity of the main display, we've supplemented it more than a
+    little.
+    The new and improved main chart has images of children whose heights match up to the line graph at the approximate
+    age they represent.
+    We don't believe this is pure chart junk since it does provide some contextualization of age ranges besides numbers.
+    Additionally, we supplemented our data further by adding milestone information for whichever age is highlighted.
+    While not directly
+    related to the children's vocab, we believe that it is important to have some kind of context for what the child's
+    life state is like
+    at any given age in order to fully understand how their language is developing.
+    Additionally, we made the dots bigger on both scatterplots since it was proving difficult to get the tooltip, along
+    with adding tooltips to the growth chart.
+    The functionality is otherwise the same as previous iterations since it was clear and caused no problems during user
+    testing.
+</p>
+
+<h3>Attributes Chart
+</h3>
+<a href="photos/finalAttributesChartEmpty.PNG" target="_blank">
+    <img src="photos/finalAttributesChartEmpty.PNG" alt="pic" height="400">
+</a>
+<p>
+    Our second chart is designed to let users see trends in the attributes of words over different periods of time.
+    They can select dimensions to produce a graph of their choosing, along with an age or age range to filter the plots.
+    Since a point of confusion was what some dimension names meant,
+    there are new and improved tooltips upon hovering over the names.
+    We reorganized the layout and moved the age selection area to the bottom since it was a point of confusion, along
+    with adding a prompt to select a dimension.
+</p>
+<a href="photos/finalAttributesChartBar.PNG" target="_blank">
+    <img src="photos/finalAttributesChartBar.PNG" alt="pic" height="400">
+</a>
+<p>
+    If users select one dimension or two of the same dimension, a dynamically scaled bar graph is created.
+</p>
+<a href="photos/finalAttributesChartScatter.PNG" target="_blank">
+    <img src="photos/finalAttributesChartScatter.PNG" alt="pic" height="400">
+</a>
+<p>
+    If users select two unique dimensions, a scatterplot with their selected x and y axis is generated.
+    Both here and in the bar graph case, we realized that eying a trend would be difficult, so we added the statistics
+    to the side
+    showing the average value of each dimension and the change over the selected age range (e.g. concreteness goes down
+    over a point between ages 2 and 12, indicating a trend towards the abstract).
+    We feel like this makes it far easier for users to see a trend if there is one.
+</p>
+
+<h3>Search Chart
+</h3>
+<a href="photos/finalSearchChart.png" target="_blank">
+    <img src="photos/finalSearchChart.png" alt="pic" width="800" height="400">
+</a>
+<p>
+    This search chart is consisted of a search pane, which allows users to click to find the words they want to see; a
+    search bar which allows users to type in key words and find words with suffix or prefix; a babble graph which shows
+    all the research results; and tool tip for each word.
+    We switched from simply showing the words on the fan chart to a babble graph because a) it looks far more
+    aesthetically pleasing,
+    b) the words are easier to read when right side up, c) it allows a separate typed search functionality, and
+    d) it's far more forgiving when you want to check multiple letter combinations since the results aren't combined
+    with the search in the same graphic.
+</p>
+<a href="photos/finalSearchChartSearchbar.png" target="_blank">
+    <img src="photos/finalSearchChartSearchbar.png" alt="pic" width="300" height="400">
+</a>
+<p>
+    The search pane now only has two layers: "First Letter" and "First Two Letters". The words will show in the babble
+    chart instead. This is because for some initials, there are too many words and they don't exactly fit into a pane.
+    Moreover, some users may prefer to type instead of click, or they want to find words by suffix/prefix, so they can
+    use the search bar instead. The center of pane is now shown as a button and thus clickable.
+</p>
+<a href="photos/finalSearchChartBabble.png" target="_blank">
+    <img src="photos/finalSearchChartBabble.png" alt="pic" width="600" height="400">
+</a>
+<p>
+    I'm using the system default tooltip. The advantage is that it fits better with generic user interface and look
+    natural (not an annoying window following your mouse around). When the mouse hoover over babbles, there would be a
+    loading sign indicating the user needs to wait 3 seconds for the default tooltip to show up.
+</p>
+<h3>
+    Download Chart
+</h3>
+<a href="photos/finalDownloadChart.png" target="_blank">
+    <img src="photos/finalDownloadChart.png" alt="pic" width="800" height="400">
+</a>
+<p>In this download chart, the user can see a box graph of attribute distribution over the whole data set. If they want
+    to see more detailed distribution for properties, they can shift to "Attribute" tab to see more. The box chart
+    allows the user to use brush tool and narrow down the selection. Since box chart shows where the data mainly at, it
+    provides a good assist for the user to know where most data is at.</p>
+<a href="photos/finalDownloadChartHandle.png" target="_blank">
+    <img src="photos/finalDownloadChartHandle.png" alt="pic" width="150" height="400">
+</a>
+<p>
+    There is a handle for the brush, and the handle is totally clickable. It's an effective
+    add-on to the visualization since it tells users to drag the thing. (Yes, wherever there is a
+    button/handle, you want to touch it; even babies understand this rule).
+</p>
+<a href="photos/finalDownloadChartStat.png" target="_blank">
+    <img src="photos/finalDownloadChartStat.png" alt="pic" width="400" height="150">
+</a>
+<p>
+    There is a line showing the average age of data selected, which changes as users adjust the brushes. This can
+    attract their attention, and they may find some useful information or key takeaway from the data set.
+</p>
+<a href="photos/finalDownloadChartDownloadBtn.png" target="_blank">
+    <img src="photos/finalDownloadChartDownloadBtn.png" alt="pic" width="500" height="150">
+</a>
+<p>
+    There is a download button showing how many entries are in the data set. By clicking on it, the user can download
+    the data they selected. This feature is crucial. The user may have some intent for the data, effectively a
+    vocabulary set,
+    and want to use it for whatever reasons. By allowing them to have the data, the key takeaway to users will be more
+    than memory but useful spreadsheet to do research in the future.
+</p>
+<h2 class="title-parts">Evaluation</h2>
+<h3>Key takeaways from our dataset</h3>
+<p>Generally, we had a broad view about our data set through our visualization. The most interesting factors include not
+    exclusively to factors as below:</p>
+<ul>
+    <li>The growth rate of vocabulary size for kids are almost constant over the years. However, at the age of 6, and
+        12, there is a significant faster learning rate. This noticably are also years where kids graduate from primary
+        school and middle school, so our guess is the education system has effected kids' vocabulary in nonobservable
+        ways. (Maybe kids learn harder when they try to apply for good middle/high schools?)
+    </li>
+    <li>
+        Kids learn less concrete and less positive words as they grow up. This is probably because they started to write
+        about more sophisticated subjects.
+    </li>
+    <li>
+        There is not much correlation between attributes of words, for different age groups (save between valence and
+        dominance).
+        This surprised us, as we were expecting some kind of relationship, but this shows the users that
+        the attributes we chose to present are independent of each other and are effective in giving a broad range of
+        dimensions
+        through which users can explore the data.
+    </li>
+</ul>
+<h3>Fundamental Questions As We Designed This Project</h3>
+<ul>
+    <li>
+        How fast are average kids learning words over time? How many words do they learn at each age?
+    </li>
+    <li>
+        Of words learned at different ages, do they have different attributes? For example, as kids grow up, do they
+        learn words that are more dominant?
+    </li>
+</ul>
+<h3>How we answered our questions</h3>
+<ul>
+    <li>
+        Q: How fast are average kids learning words over time? How many words do they learn at each age?
+        <br \>A: In the "Growth" chart, we showed the word growth rate over time on the right. There are also a column
+        with statistics showing the numbers.
+    </li>
+    <li>
+        Q: Of words learned at different ages, do they have different attributes? For example, as kids grow up, do they
+        learn words that are more dominant?
+        <br \>A: Short answer is "yes". Long answer is, "Go find out by yourself" in "Attribute" chart. If you want to
+        find dominant, you can select "dominance" for both x and y axis, and you can see the distribution in the bar
+        chart.
+    </li>
+    <li>
+        Q: Are different attributes correlated with each other? Does the correlation between attributes change over
+        time?
+        <br \>A: No, not very correlated. You can see this by selecting different attributes as x and y axis, then you
+        can see the correlations in the scatter plot.
+    </li>
+    <li>
+        Q: Can we find words by their prefix and suffix?
+        <br \>A: Yes, in the "Search" chart, you can type in the search bar, and click search button to do the search.
+    </li>
+    <li>
+        Q: How does attributes of words relate to age of learning?
+        <br \>A: Good question. You can see that in "Attribute" chart, where you specify age ranges, then select the
+        attribute you want to see for both x and y axises. When you drag the age range, you see the trend.
+    </li>
+</ul>
+<h3>Future Improvements</h3>
+<p>Our visualization functions pretty well. However, if the linguistic scientists come up with much larger and
+    comprehensive databases of kids' word learning, we will need to change the visualization tools to represent that
+    data, and find ways to handle the delays.</p>
+</body>
+</html>

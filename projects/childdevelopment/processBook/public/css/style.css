@@ -1,0 +1,29 @@
+body {
+    font-family: 'Dosis', sans-serif;
+}
+
+
+
+#title {
+    text-align: center;
+    color: #3E50AC;
+}
+
+h3 {
+    color: #3E50AC;
+    fill: #3E50AC;
+}
+
+.title-parts {
+    color: #137196;
+    fill: #137196;
+}
+
+p ul {
+    text-align: justify;
+    font-family: 'Arial';
+}
+
+li {
+    text-align: justify;
+}
