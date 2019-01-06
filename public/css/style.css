@@ -1,43 +1,135 @@
-html {
-    position: relative;
-    height: 100%;
-    width: 100%
+body {
+    margin: 10px;
+    background-color: #000000;
+    color: gray;
 }
 
-body {
+.table-nav {
+    table-layout: fixed;
+    background-color: #1d2124;
+    color: #FFC235;
+}
+
+.table-nav td {
     position: relative;
-    height: 100%;
+    text-align: center;
+    background-color: #000000;
+    height: 40px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.table-nav td:hover {
+    background-color: #FFEDC2;
+    color: #000000;
+}
+
+.table-nav td.nav-selected {
+    background-color: #FFC235;
+    color: #000000;
+}
+
+.page-title-div {
+    position: relative;
     width: 100%;
-    background-color: grey;
-    margin: 0;
+    height: 80px;
+    background-color: #B38311;
+}
+
+.title-text {
+    position: absolute;
+    left: 50px;
+    bottom: 20px;
+    font-size: 32px;
+    font-family: Luminari, fantasy;
+    color: #FFEDC2;
+}
+
+.nav-guide-dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 5px;
+    top: 5px;
+    background-color: #B38311;
+}
+
+.email-address {
+    cursor: pointer;
+}
+
+.email-address:hover {
+    color: #FFC235;
+}
+
+.page-hyperlink {
+    text-decoration: none;
+    color: #FFEDC2;
+    cursor: pointer;
+}
+
+.page-hyperlink:hover {
+    color: #000000;
+    background-color: #FFEDC2;
+}
+
+.page-click-button {
+    background-color: #FFEDC2;
+    color: #000000;
+    border: solid #FFEDC2 1px;
+    text-align: center;
+}
+
+.page-click-button:hover {
+    background-color: #000000;
+    color: #FFC235;
+}
+
+/*.table-nav td.nav-selected {*/
+/*background-color: #FFC235;*/
+/*}*/
+
+/*.table-nav td a {*/
+/*text-align: center;*/
+/*vertical-align: middle;*/
+/*color: #FFEDC2;*/
+/*display: block;*/
+/*text-decoration: none;*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*}*/
+
+/*.table-nav td a:hover {*/
+/*color: #000000;*/
+/*}*/
+
+/*.table-nav td.nav-selected a {*/
+/*color: #000000;*/
+/*}*/
+
+.table-page-element {
+    width: 100%;
     padding: 0;
 }
 
-header {
-    position: relative;
-    height: 20%;
+.color-primary-0 {
+    color: #B38311
 }
 
-#header-tool-pane {
-    position: relative;
-    height: 50%;
-    background-color: #8794D8;
+/* Main Primary color */
+.color-primary-1 {
+    color: #FFEDC2
 }
 
-
-#content {
-    height: 80%;
+.color-primary-2 {
+    color: #FFC235
 }
 
-.nav-option {
-    position: absolute;
-    color: #613BAC;
-    background-color: #A185D8;
-    text-align: center;
+.color-primary-3 {
+    color: #392800
 }
 
-.nav-option:hover {
-    color: #A185D8;
-    background-color: #613BAC;
-    text-align: center;
+.color-primary-4 {
+    color: #000000
 }
+
